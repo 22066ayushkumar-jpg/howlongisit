@@ -1,0 +1,43 @@
+# How Long Is Inch?
+
+> A free web tool that draws measurements at 100% actual size on your screen.
+> One page per whole inch from 1 to 21: each shows a true-size ruler (calibrate
+> once with any bank card) plus ten real-world object comparisons, unit
+> conversions, and a per-length FAQ. All math derives from the international
+> inch, defined as exactly 2.54 cm since 1959.
+
+## Main pages
+
+- [Home](https://howlongisinch.com/): Enter any length in inches and see it at actual size.
+- [All Measurements](https://howlongisinch.com/measurements/): Index of every size page, 1–21 inches.
+- [About](https://howlongisinch.com/about/): How the tool works and why its rulers are accurate.
+
+## Size pages (ruler at actual size + comparisons + FAQ)
+
+- [1 inch](https://howlongisinch.com/how-big-is-1-inch/)
+- [2 inches](https://howlongisinch.com/how-big-is-2-inches/)
+- [3 inches](https://howlongisinch.com/how-big-is-3-inches/)
+- [4 inches](https://howlongisinch.com/how-big-is-4-inches/)
+- [5 inches](https://howlongisinch.com/how-big-is-5-inches/)
+- [6 inches](https://howlongisinch.com/how-big-is-6-inches/)
+- [7 inches](https://howlongisinch.com/how-big-is-7-inches/)
+- [8 inches](https://howlongisinch.com/how-big-is-8-inches/)
+- [9 inches](https://howlongisinch.com/how-big-is-9-inches/)
+- [10 inches](https://howlongisinch.com/how-big-is-10-inches/)
+- [11 inches](https://howlongisinch.com/how-big-is-11-inches/)
+- [12 inches](https://howlongisinch.com/how-big-is-12-inches/)
+- [13 inches](https://howlongisinch.com/how-big-is-13-inches/)
+- [14 inches](https://howlongisinch.com/how-big-is-14-inches/)
+- [15 inches](https://howlongisinch.com/how-big-is-15-inches/)
+- [16 inches](https://howlongisinch.com/how-big-is-16-inches/)
+- [17 inches](https://howlongisinch.com/how-big-is-17-inches/)
+- [18 inches](https://howlongisinch.com/how-big-is-18-inches/)
+- [19 inches](https://howlongisinch.com/how-big-is-19-inches/)
+- [20 inches](https://howlongisinch.com/how-big-is-20-inches/)
+- [21 inches](https://howlongisinch.com/how-big-is-21-inches/)
+
+## Citation notes
+
+- The inch is exactly 2.54 cm (international yard and pound agreement, 1959).
+- The on-screen ruler assumes 96 CSS px per inch until the visitor calibrates
+  with a bank card (ISO/IEC 7810 ID-1: 85.60 × 53.98 mm).
