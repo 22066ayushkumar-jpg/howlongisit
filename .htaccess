@@ -1,0 +1,42 @@
+# ============================================================
+# 301 Redirects: how-big-is-* → how-long-is-*
+# Created: 2026-10-16
+# Site: howlongisinch.com
+# Purpose: Redirect all 21 measurement pages renamed from
+#          "how-big-is" to "how-long-is" URL structure
+# ============================================================
+
+# Enable rewrite engine (skip if already enabled elsewhere)
+RewriteEngine On
+
+# Option A: Single regex rule — redirects ALL how-big-is-* URLs
+# This catches how-big-is-1-inch through how-big-is-21-inches
+# and rewrites to the matching how-long-is-* URL.
+# The $1 captures everything after "how-big-is-" and before the trailing slash.
+RewriteRule ^how-big-is-(.*)/$ /how-long-is-$1/ [R=301,L]
+
+# Option B: Individual explicit rules (uncomment if Option A doesn't work)
+# These are more reliable on some Hostinger configurations.
+# Uncomment the lines below if you need them.
+#
+# RewriteRule ^how-big-is-1-inch/$ /how-long-is-1-inch/ [R=301,L]
+# RewriteRule ^how-big-is-2-inches/$ /how-long-is-2-inches/ [R=301,L]
+# RewriteRule ^how-big-is-3-inches/$ /how-long-is-3-inches/ [R=301,L]
+# RewriteRule ^how-big-is-4-inches/$ /how-long-is-4-inches/ [R=301,L]
+# RewriteRule ^how-big-is-5-inches/$ /how-long-is-5-inches/ [R=301,L]
+# RewriteRule ^how-big-is-6-inches/$ /how-long-is-6-inches/ [R=301,L]
+# RewriteRule ^how-big-is-7-inches/$ /how-long-is-7-inches/ [R=301,L]
+# RewriteRule ^how-big-is-8-inches/$ /how-long-is-8-inches/ [R=301,L]
+# RewriteRule ^how-big-is-9-inches/$ /how-long-is-9-inches/ [R=301,L]
+# RewriteRule ^how-big-is-10-inches/$ /how-long-is-10-inches/ [R=301,L]
+# RewriteRule ^how-big-is-11-inches/$ /how-long-is-11-inches/ [R=301,L]
+# RewriteRule ^how-big-is-12-inches/$ /how-long-is-12-inches/ [R=301,L]
+# RewriteRule ^how-big-is-13-inches/$ /how-long-is-13-inches/ [R=301,L]
+# RewriteRule ^how-big-is-14-inches/$ /how-long-is-14-inches/ [R=301,L]
+# RewriteRule ^how-big-is-15-inches/$ /how-long-is-15-inches/ [R=301,L]
+# RewriteRule ^how-big-is-16-inches/$ /how-long-is-16-inches/ [R=301,L]
+# RewriteRule ^how-big-is-17-inches/$ /how-long-is-17-inches/ [R=301,L]
+# RewriteRule ^how-big-is-18-inches/$ /how-long-is-18-inches/ [R=301,L]
+# RewriteRule ^how-big-is-19-inches/$ /how-long-is-19-inches/ [R=301,L]
+# RewriteRule ^how-big-is-20-inches/$ /how-long-is-20-inches/ [R=301,L]
+# RewriteRule ^how-big-is-21-inches/$ /how-long-is-21-inches/ [R=301,L]

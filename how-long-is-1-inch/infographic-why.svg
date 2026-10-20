@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Infographic: Why How Long Is Inch exists — numbers on a page are hard to picture. This site draws every inch at true actual size on your screen so you can see, not guess.">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <filter id="shadow" x="-4%" y="-4%" width="108%" height="112%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#bgGrad)" rx="16"/>
+  <rect x="1" y="1" width="798" height="598" fill="none" stroke="#e2e8f0" stroke-width="2" rx="16"/>
+
+  <!-- Header bar -->
+  <rect x="24" y="24" width="752" height="64" rx="10" fill="url(#accentGrad)" filter="url(#shadow)"/>
+  <text x="400" y="62" text-anchor="middle" fill="#fff" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="700" letter-spacing="-0.01em">Why does this site exist?</text>
+
+  <!-- Problem box -->
+  <rect x="40" y="108" width="340" height="200" rx="12" fill="#fff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#shadow)"/>
+  <circle cx="68" cy="136" r="14" fill="#fee2e2"/>
+  <text x="68" y="141" text-anchor="middle" fill="#dc2626" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700">!</text>
+  <text x="92" y="141" fill="#0f172a" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="700">The problem</text>
+  <text x="60" y="168" fill="#475569" font-family="Inter, system-ui, sans-serif" font-size="13">A number on a page tells you a</text>
+  <text x="60" y="186" fill="#475569" font-family="Inter, system-ui, sans-serif" font-size="13">measurement — but not what it</text>
+  <text x="60" y="204" fill="#475569" font-family="Inter, system-ui, sans-serif" font-size="13">actually looks like in the real</text>
+  <text x="60" y="222" fill="#475569" font-family="Inter, system-ui, sans-serif" font-size="13">world. 12 inches? A foot. Great.</text>
+  <text x="60" y="240" fill="#475569" font-family="Inter, system-ui, sans-serif" font-size="13">But how long is that, really?</text>
+
+  <!-- Arrow right -->
+  <path d="M390 200 L430 200" stroke="#94a3b8" stroke-width="2" fill="none"/>
+  <polygon points="430,194 440,200 430,206" fill="#94a3b8"/>
+
+  <!-- Solution box -->
+  <rect x="440" y="108" width="320" height="200" rx="12" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5" filter="url(#shadow)"/>
+  <circle cx="468" cy="136" r="14" fill="#dbeafe"/>
+  <text x="468" y="141" text-anchor="middle" fill="#2563eb" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700">✓</text>
+  <text x="492" y="141" fill="#0f172a" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="700">The fix</text>
+  <text x="460" y="168" fill="#1e40af" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600">Draw the measurement at</text>
+  <text x="460" y="186" fill="#1e40af" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600">100% actual size on your</text>
+  <text x="460" y="204" fill="#1e40af" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600">screen — a real ruler, not a</text>
+  <text x="460" y="222" fill="#1e40af" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600">photo or a guess.</text>
+  <text x="460" y="240" fill="#475569" font-family="Inter, system-ui, sans-serif" font-size="12">Calibrate once with any bank</text>
+  <text x="460" y="254" fill="#475569" font-family="Inter, system-ui, sans-serif" font-size="12">card and every page becomes</text>
+  <text x="460" y="268" fill="#475569" font-family="Inter, system-ui, sans-serif" font-size="12">true to life on your display.</text>
+
+  <!-- Ruler preview in solution box -->
+  <rect x="600" y="170" width="108" height="36" rx="4" fill="#fff" stroke="#cbd5e1" stroke-width="1"/>
+  <line x1="606" y1="178" x2="606" y2="200" stroke="#0f172a" stroke-width="2"/>
+  <line x1="622" y1="178" x2="622" y2="195" stroke="#475569" stroke-width="1"/>
+  <line x1="638" y1="178" x2="638" y2="195" stroke="#475569" stroke-width="1"/>
+  <line x1="654" y1="178" x2="654" y2="195" stroke="#475569" stroke-width="1"/>
+  <line x1="670" y1="178" x2="670" y2="195" stroke="#475569" stroke-width="1"/>
+  <line x1="686" y1="178" x2="686" y2="195" stroke="#475569" stroke-width="1"/>
+  <line x1="702" y1="178" x2="702" y2="195" stroke="#475569" stroke-width="1"/>
+  <line x1="718" y1="178" x2="718" y2="195" stroke="#475569" stroke-width="1"/>
+  <line x1="734" y1="178" x2="734" y2="195" stroke="#475569" stroke-width="1"/>
+  <line x1="750" y1="178" x2="750" y2="195" stroke="#475569" stroke-width="1"/>
+  <line x1="766" y1="178" x2="766" y2="200" stroke="#0f172a" stroke-width="2"/>
+  <text x="654" y="214" text-anchor="middle" fill="#475569" font-family="Inter, system-ui, sans-serif" font-size="9">1 inch</text>
+
+  <!-- Facts row -->
+  <rect x="40" y="328" width="720" height="90" rx="12" fill="#fff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#shadow)"/>
+
+  <!-- Fact 1 -->
+  <circle cx="90" cy="370" r="12" fill="#2563eb"/>
+  <text x="90" y="375" text-anchor="middle" fill="#fff" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="700">1</text>
+  <text x="112" y="366" fill="#0f172a" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="700">2.54 cm</text>
+  <text x="112" y="382" fill="#475569" font-family="Inter, system-ui, sans-serif" font-size="11">Exactly, since 1959. No rounding.</text>
+
+  <!-- Fact 2 -->
+  <circle cx="260" cy="370" r="12" fill="#2563eb"/>
+  <text x="260" y="375" text-anchor="middle" fill="#fff" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="700">2</text>
+  <text x="282" y="366" fill="#0f172a" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="700">10 objects</text>
+  <text x="282" y="382" fill="#475569" font-family="Inter, system-ui, sans-serif" font-size="11">Per page — things you already know.</text>
+
+  <!-- Fact 3 -->
+  <circle cx="430" cy="370" r="12" fill="#2563eb"/>
+  <text x="430" y="375" text-anchor="middle" fill="#fff" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="700">3</text>
+  <text x="452" y="366" fill="#0f172a" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="700">1–21 inches</text>
+  <text x="452" y="382" fill="#475569" font-family="Inter, system-ui, sans-serif" font-size="11">Every whole inch, its own page.</text>
+
+  <!-- Fact 4 -->
+  <circle cx="600" cy="370" r="12" fill="#2563eb"/>
+  <text x="600" y="375" text-anchor="middle" fill="#fff" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="700">4</text>
+  <text x="622" y="366" fill="#0f172a" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="700">Free, always</text>
+  <text x="622" y="382" fill="#475569" font-family="Inter, system-ui, sans-serif" font-size="11">No sign-up. No tracking. No ads.</text>
+
+  <!-- Footer -->
+  <text x="400" y="460" text-anchor="middle" fill="#94a3b8" font-family="Inter, system-ui, sans-serif" font-size="12" font-style="italic">Numbers tell you how much. This site shows you how long.</text>
+
+  <!-- Bottom branding -->
+  <rect x="40" y="490" width="720" height="70" rx="12" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="400" y="518" text-anchor="middle" fill="#0f172a" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="700">How Long Is Inch?</text>
+  <text x="400" y="540" text-anchor="middle" fill="#64748b" font-family="Inter, system-ui, sans-serif" font-size="12">See inches at their actual size — visualize any measurement on your screen.</text>
+</svg>
