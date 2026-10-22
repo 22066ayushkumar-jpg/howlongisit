@@ -1,0 +1,18 @@
+{
+  "name": "how-long-is-inch",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Static site for howlongisinch.com, with a JSON-LD structured-data build and validation pipeline.",
+  "scripts": {
+    "test": "node scripts/validate-schema.mjs && node --test scripts/test/",
+    "validate": "node scripts/validate-schema.mjs",
+    "audit": "node scripts/audit-schema.mjs --include-deploy",
+    "build:data": "node scripts/build-site-data.mjs",
+    "build:schema": "node scripts/generate-schema.mjs",
+    "check": "node scripts/build-site-data.mjs --check && node scripts/generate-schema.mjs --check && node scripts/validate-schema.mjs"
+  },
+  "engines": {
+    "node": ">=18.17"
+  }
+}
