@@ -38,11 +38,15 @@ export function graphForPage(page) {
 
   switch (page.kind) {
     case 'home': {
+      nodes.push(personNode());
       nodes.push(
         webPageNode({
           url: page.url,
           name: page.socialTitle || page.title,
           description: page.description,
+          author: true,
+          datePublished: PUBLISHED,
+          dateModified: PUBLISHED,
         })
       );
       nodes.push(
@@ -57,6 +61,7 @@ export function graphForPage(page) {
     }
 
     case 'about':
+    case 'contact':
     case 'methodology':
       nodes.push(personNode());
       nodes.push(
@@ -72,23 +77,30 @@ export function graphForPage(page) {
       break;
 
     case 'collection': {
+      nodes.push(personNode());
       nodes.push(
         collectionPageNode({
           url: page.url,
           name: page.socialTitle || page.title,
           description: page.description,
+          author: true,
+          datePublished: PUBLISHED,
+          dateModified: PUBLISHED,
         })
       );
       break;
     }
 
     case 'measurement': {
+      nodes.push(personNode());
       const thing = thingNode({ label: page.label, centimeters: page.centimeters });
       const pageNode = webPageNode({
         url: page.url,
         name: page.socialTitle || page.title,
         description: page.description,
-        dateModified: page.dateModified,
+        author: true,
+        datePublished: PUBLISHED,
+        dateModified: PUBLISHED,
       });
       nodes.push(pageNode, thing);
 

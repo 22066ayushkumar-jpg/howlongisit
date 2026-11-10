@@ -169,8 +169,8 @@ export function softwareApplicationNode({ url, name, description, featureList })
 }
 
 /** A CollectionPage node for a listing of pages. */
-export function collectionPageNode({ url, name, description }) {
-  return {
+export function collectionPageNode({ url, name, description, author, datePublished, dateModified }) {
+  const node = {
     '@type': 'CollectionPage',
     '@id': `${url}#webpage`,
     url,
@@ -179,6 +179,10 @@ export function collectionPageNode({ url, name, description }) {
     isPartOf: { '@id': WEBSITE_ID },
     inLanguage: 'en-US',
   };
+  if (author) node.author = { '@id': AUTHOR_ID };
+  if (datePublished) node.datePublished = datePublished;
+  if (dateModified) node.dateModified = dateModified;
+  return node;
 }
 
 /** Turn a human label into a stable @id fragment. */

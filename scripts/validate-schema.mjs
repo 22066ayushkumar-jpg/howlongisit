@@ -234,7 +234,7 @@ for (const targetRoot of TARGETS) {
     // --- measurement pages describe their measurement --------------------
     if (page.kind === 'measurement') {
       check(
-        typeof webPage.dateModified === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(webPage.dateModified),
+        typeof webPage.dateModified === 'string' && /^\d{4}-\d{2}(-\d{2})?$/.test(webPage.dateModified),
         `${rel}: measurement page has no dateModified`
       );
       const thing = graph.find((n) => n['@type'] === 'Thing');
@@ -248,10 +248,10 @@ for (const targetRoot of TARGETS) {
       }
     }
 
-    // --- author pages carry the Person and the publish dates --------------
-    if (page.kind === 'about' || page.kind === 'methodology') {
+    // --- every page carries the Person and the publish dates --------------
+    {
       const person = graph.find((n) => n['@type'] === 'Person');
-      check(Boolean(person), `${rel}: author page has no Person node`);
+      check(Boolean(person), `${rel}: page has no Person node`);
       if (person) {
         check(person.name === 'Chetan Kumar', `${rel}: Person name is "${person.name}"`);
         check(person.jobTitle === 'SEO specialist', `${rel}: Person jobTitle is "${person.jobTitle}"`);
@@ -261,13 +261,14 @@ for (const targetRoot of TARGETS) {
           `${rel}: Person sameAs does not include the GitHub profile`
         );
       }
+      const pageNode = graph.find((n) => n.author);
       check(
-        webPage.author && webPage.author['@id'] === 'https://howlongisinch.com/#author',
-        `${rel}: WebPage author does not reference the Person node`
+        pageNode && pageNode.author['@id'] === 'https://howlongisinch.com/#author',
+        `${rel}: page node author does not reference the Person node`
       );
       check(
-        webPage.datePublished === '2026-11' && webPage.dateModified === '2026-11',
-        `${rel}: WebPage is missing the November 2026 publish/modified dates`
+        pageNode && pageNode.datePublished === '2026-11' && pageNode.dateModified === '2026-11',
+        `${rel}: page node is missing the November 2026 publish/modified dates`
       );
     }
   }

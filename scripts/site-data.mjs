@@ -23,6 +23,14 @@ export const pages = [
     "kind": "about"
   },
   {
+    "file": "contact/index.html",
+    "url": "https://howlongisinch.com/contact/",
+    "title": "Contact Us | How Long Is an Inch?",
+    "socialTitle": "Contact Us | How Long Is an Inch?",
+    "description": "Contact How Long Is Inch?. Email Chetan Kumar with corrections, calibration problems, object suggestions, or feedback about the actual-size ruler tool.",
+    "kind": "contact"
+  },
+  {
     "file": "how-long-is-1-inch/index.html",
     "url": "https://howlongisinch.com/how-long-is-1-inch/",
     "title": "How long is 1 inch? See the Actual Size Ruler (2.54 cm)",

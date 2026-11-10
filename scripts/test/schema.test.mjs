@@ -269,7 +269,7 @@ test('graphForPage produces one consolidated graph per page kind', () => {
       assert.ok(types.includes('SoftwareApplication'), `${page.file} has no SoftwareApplication node`);
     }
   }
-  assert.deepEqual([...kinds].sort(), ['about', 'collection', 'home', 'measurement', 'methodology']);
+  assert.deepEqual([...kinds].sort(), ['about', 'collection', 'contact', 'home', 'measurement', 'methodology']);
 });
 
 test('personNode carries exactly the published author facts', () => {
@@ -284,13 +284,13 @@ test('personNode carries exactly the published author facts', () => {
 
 test('author pages reference the Person and carry the November 2026 dates', () => {
   for (const page of pages) {
-    if (page.kind !== 'about' && page.kind !== 'methodology') continue;
     const graph = graphForPage(page)['@graph'];
     const person = graph.find((n) => n['@type'] === 'Person');
     assert.ok(person, `${page.file} has no Person node`);
-    const webPage = graph.find((n) => n['@type'] === 'WebPage');
-    assert.equal(webPage.author['@id'], person['@id'], `${page.file} author reference`);
-    assert.equal(webPage.datePublished, '2026-11', `${page.file} datePublished`);
-    assert.equal(webPage.dateModified, '2026-11', `${page.file} dateModified`);
+    const pageNode = graph.find((n) => n.author);
+    assert.ok(pageNode, `${page.file} has no node referencing the author`);
+    assert.equal(pageNode.author['@id'], person['@id'], `${page.file} author reference`);
+    assert.equal(pageNode.datePublished, '2026-11', `${page.file} datePublished`);
+    assert.equal(pageNode.dateModified, '2026-11', `${page.file} dateModified`);
   }
 });

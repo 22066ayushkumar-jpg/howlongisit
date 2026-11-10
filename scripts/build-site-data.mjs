@@ -124,6 +124,10 @@ function buildPage(file) {
     return { ...base, kind: 'methodology' };
   }
 
+  if (rel === 'contact/index.html') {
+    return { ...base, kind: 'contact' };
+  }
+
   if (rel === 'measurements/index.html') {
     return { ...base, kind: 'collection' };
   }
