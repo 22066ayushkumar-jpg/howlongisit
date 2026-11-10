@@ -1,6 +1,6 @@
 # How Long Is Inch?
 
-> A free web tool that draws measurements at 100% actual size on your screen.
+> A free web tool that draws measurements at Calibrated Actual Size on your screen.
 > One page per whole inch from 1 to 21: each shows a true-size ruler (calibrate
 > once with any bank card) plus ten real-world object comparisons, unit
 > conversions, and a per-length FAQ. All math derives from the international

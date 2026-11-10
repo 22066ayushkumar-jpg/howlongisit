@@ -18,7 +18,20 @@ export const SITE = {
   logo: 'https://howlongisinch.com/og-image.png',
 };
 
+/** The site's owner facts. Published on the About and How We Measure pages. */
+export const AUTHOR = {
+  name: 'Chetan Kumar',
+  jobTitle: 'SEO specialist',
+  email: 'contact@howlongisinch.com',
+  url: `${SITE.origin}/about/`,
+  sameAs: ['https://github.com/22066ayushkumar-jpg'],
+};
+
+/** November 2026, in ISO 8601 month precision — matches the visible "Last updated" stamp. */
+export const PUBLISHED = '2026-11';
+
 const WEBSITE_ID = `${SITE.origin}/#website`;
+const AUTHOR_ID = `${SITE.origin}/#author`;
 
 /** The shared WebSite node, referenced by every other node via @id. */
 export function websiteNode() {
@@ -33,13 +46,31 @@ export function websiteNode() {
   };
 }
 
-/** The shared Organization node behind the site. */
+/**
+ * The shared Organization node behind the site.
+ * Name, url and email are the publisher facts required on the home page;
+ * the name follows the Organization spec in the site brief.
+ */
 export function publisherNode() {
   return {
     '@type': 'Organization',
     '@id': `${SITE.origin}/#publisher`,
-    name: SITE.name,
+    name: 'How Long Is an Inch?',
     url: `${SITE.origin}/`,
+    email: AUTHOR.email,
+  };
+}
+
+/** The Person who built and maintains the site. */
+export function personNode() {
+  return {
+    '@type': 'Person',
+    '@id': AUTHOR_ID,
+    name: AUTHOR.name,
+    jobTitle: AUTHOR.jobTitle,
+    email: AUTHOR.email,
+    url: AUTHOR.url,
+    sameAs: [...AUTHOR.sameAs],
   };
 }
 
@@ -48,8 +79,11 @@ export function publisherNode() {
  * `name` and `description` are taken from the page's own <title> and
  * meta description so the schema never describes something the page
  * does not actually show.
+ *
+ * `author: true` references the shared Person node, which the caller is
+ * responsible for adding to the same graph.
  */
-export function webPageNode({ url, name, description, dateModified }) {
+export function webPageNode({ url, name, description, dateModified, datePublished, author }) {
   const node = {
     '@type': 'WebPage',
     '@id': `${url}#webpage`,
@@ -59,6 +93,8 @@ export function webPageNode({ url, name, description, dateModified }) {
     isPartOf: { '@id': WEBSITE_ID },
     inLanguage: 'en-US',
   };
+  if (author) node.author = { '@id': AUTHOR_ID };
+  if (datePublished) node.datePublished = datePublished;
   if (dateModified) node.dateModified = dateModified;
   node.mainEntity = undefined;
   return node;

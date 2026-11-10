@@ -858,6 +858,14 @@ export const pages = [
     ]
   },
   {
+    "file": "how-we-measure/index.html",
+    "url": "https://howlongisinch.com/how-we-measure/",
+    "title": "How We Measure an Inch | How Long Is an Inch?",
+    "socialTitle": "How We Measure an Inch | How Long Is an Inch?",
+    "description": "How the on-screen ruler turns pixels into inches: the 1959 definition of the inch, screen PPI, one-time credit-card calibration, and what is exact versus approximate.",
+    "kind": "methodology"
+  },
+  {
     "file": "index.html",
     "url": "https://howlongisinch.com/",
     "title": "How Long Is Inch? — See Inches at Their Actual Size",
@@ -865,7 +873,7 @@ export const pages = [
     "description": "Visualize measurements with actual-size rulers. See inches at their true actual size and compare them with familiar everyday objects.",
     "kind": "home",
     "featureList": [
-      "Draws a ruler at 100% actual size on your display",
+      "Draws a ruler at Calibrated Actual Size on your display",
       "One-time screen calibration using a bank card",
       "Ten real-world object comparisons per measurement",
       "Metric, imperial and fractional unit conversions"

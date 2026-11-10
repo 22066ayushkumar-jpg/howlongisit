@@ -17,7 +17,7 @@
  *
  * Exit code is non-zero if anything fails.
  */
-import { readFileSync, readdirSync, statSync } from 'node:fs';
+import { readFileSync, readdirSync, statSync, existsSync } from 'node:fs';
 import { join, relative, sep } from 'node:path';
 import { site, pages } from './site-data.mjs';
 import {
@@ -33,7 +33,7 @@ import {
 const ROOT = process.cwd();
 
 const KNOWN_TYPES = new Set([
-  'WebSite', 'WebPage', 'CollectionPage', 'Organization', 'Thing',
+  'WebSite', 'WebPage', 'CollectionPage', 'Organization', 'Thing', 'Person',
   'BreadcrumbList', 'ListItem', 'Question', 'Answer', 'FAQPage',
   'SoftwareApplication', 'Offer', 'ImageObject',
 ]);
@@ -63,6 +63,7 @@ let pageCount = 0;
 let blockCount = 0;
 
 for (const targetRoot of TARGETS) {
+  if (!existsSync(targetRoot)) continue;
   for (const page of pages) {
     const file = join(targetRoot, page.file.split('/').join(sep));
     const rel = relative(ROOT, file);
@@ -128,7 +129,7 @@ for (const targetRoot of TARGETS) {
     });
 
     // --- every @id reference resolves ----------------------------------
-    const referenceKeys = new Set(['isPartOf', 'publisher', 'mainEntity', 'about', 'item']);
+    const referenceKeys = new Set(['isPartOf', 'publisher', 'mainEntity', 'about', 'author', 'item']);
     const collectRefs = (value, out) => {
       if (Array.isArray(value)) value.forEach((v) => collectRefs(v, out));
       else if (value && typeof value === 'object') {
@@ -245,6 +246,29 @@ for (const targetRoot of TARGETS) {
           `${rel}: Thing description does not mention ${page.centimeters} cm`
         );
       }
+    }
+
+    // --- author pages carry the Person and the publish dates --------------
+    if (page.kind === 'about' || page.kind === 'methodology') {
+      const person = graph.find((n) => n['@type'] === 'Person');
+      check(Boolean(person), `${rel}: author page has no Person node`);
+      if (person) {
+        check(person.name === 'Chetan Kumar', `${rel}: Person name is "${person.name}"`);
+        check(person.jobTitle === 'SEO specialist', `${rel}: Person jobTitle is "${person.jobTitle}"`);
+        check(person.email === 'contact@howlongisinch.com', `${rel}: Person email is "${person.email}"`);
+        check(
+          Array.isArray(person.sameAs) && person.sameAs.includes('https://github.com/22066ayushkumar-jpg'),
+          `${rel}: Person sameAs does not include the GitHub profile`
+        );
+      }
+      check(
+        webPage.author && webPage.author['@id'] === 'https://howlongisinch.com/#author',
+        `${rel}: WebPage author does not reference the Person node`
+      );
+      check(
+        webPage.datePublished === '2026-11' && webPage.dateModified === '2026-11',
+        `${rel}: WebPage is missing the November 2026 publish/modified dates`
+      );
     }
   }
 }

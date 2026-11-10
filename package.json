@@ -5,7 +5,7 @@
   "type": "module",
   "description": "Static site for howlongisinch.com, with a JSON-LD structured-data build and validation pipeline.",
   "scripts": {
-    "test": "node scripts/validate-schema.mjs && node --test scripts/test/",
+    "test": "node scripts/validate-schema.mjs && node --test \"scripts/test/*.test.mjs\"",
     "validate": "node scripts/validate-schema.mjs",
     "audit": "node scripts/audit-schema.mjs --include-deploy",
     "build:data": "node scripts/build-site-data.mjs",

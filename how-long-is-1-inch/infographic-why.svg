@@ -42,7 +42,7 @@
   <text x="468" y="141" text-anchor="middle" fill="#2563eb" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700">✓</text>
   <text x="492" y="141" fill="#0f172a" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="700">The fix</text>
   <text x="460" y="168" fill="#1e40af" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600">Draw the measurement at</text>
-  <text x="460" y="186" fill="#1e40af" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600">100% actual size on your</text>
+  <text x="460" y="186" fill="#1e40af" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600">Calibrated Actual Size on your</text>
   <text x="460" y="204" fill="#1e40af" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600">screen — a real ruler, not a</text>
   <text x="460" y="222" fill="#1e40af" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600">photo or a guess.</text>
   <text x="460" y="240" fill="#475569" font-family="Inter, system-ui, sans-serif" font-size="12">Calibrate once with any bank</text>

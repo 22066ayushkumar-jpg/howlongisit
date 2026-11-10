@@ -120,6 +120,10 @@ function buildPage(file) {
     return { ...base, kind: 'about' };
   }
 
+  if (rel === 'how-we-measure/index.html') {
+    return { ...base, kind: 'methodology' };
+  }
+
   if (rel === 'measurements/index.html') {
     return { ...base, kind: 'collection' };
   }

@@ -10,6 +10,7 @@ import {
   serializeGraph,
   websiteNode,
   publisherNode,
+  personNode,
   webPageNode,
   thingNode,
   breadcrumbNode,
@@ -17,6 +18,7 @@ import {
   softwareApplicationNode,
   collectionPageNode,
 } from './schema.mjs';
+import { PUBLISHED } from './schema.mjs';
 
 /**
  * Matches any existing JSON-LD script block, including pretty-printed ones,
@@ -55,11 +57,16 @@ export function graphForPage(page) {
     }
 
     case 'about':
+    case 'methodology':
+      nodes.push(personNode());
       nodes.push(
         webPageNode({
           url: page.url,
           name: page.socialTitle || page.title,
           description: page.description,
+          author: true,
+          datePublished: PUBLISHED,
+          dateModified: PUBLISHED,
         })
       );
       break;

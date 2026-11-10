@@ -15,6 +15,7 @@ import {
   serializeGraph,
   websiteNode,
   publisherNode,
+  personNode,
   webPageNode,
   thingNode,
   breadcrumbNode,
@@ -268,5 +269,28 @@ test('graphForPage produces one consolidated graph per page kind', () => {
       assert.ok(types.includes('SoftwareApplication'), `${page.file} has no SoftwareApplication node`);
     }
   }
-  assert.deepEqual([...kinds].sort(), ['about', 'collection', 'home', 'measurement']);
+  assert.deepEqual([...kinds].sort(), ['about', 'collection', 'home', 'measurement', 'methodology']);
+});
+
+test('personNode carries exactly the published author facts', () => {
+  const node = personNode();
+  assert.equal(node['@type'], 'Person');
+  assert.equal(node['@id'], 'https://howlongisinch.com/#author');
+  assert.equal(node.name, 'Chetan Kumar');
+  assert.equal(node.jobTitle, 'SEO specialist');
+  assert.equal(node.email, 'contact@howlongisinch.com');
+  assert.deepEqual(node.sameAs, ['https://github.com/22066ayushkumar-jpg']);
+});
+
+test('author pages reference the Person and carry the November 2026 dates', () => {
+  for (const page of pages) {
+    if (page.kind !== 'about' && page.kind !== 'methodology') continue;
+    const graph = graphForPage(page)['@graph'];
+    const person = graph.find((n) => n['@type'] === 'Person');
+    assert.ok(person, `${page.file} has no Person node`);
+    const webPage = graph.find((n) => n['@type'] === 'WebPage');
+    assert.equal(webPage.author['@id'], person['@id'], `${page.file} author reference`);
+    assert.equal(webPage.datePublished, '2026-11', `${page.file} datePublished`);
+    assert.equal(webPage.dateModified, '2026-11', `${page.file} dateModified`);
+  }
 });
